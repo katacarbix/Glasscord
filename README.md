@@ -36,8 +36,8 @@ _TL;DR: Help me I have no purpose in this life anymore_
 Well, glad you asked!
 
 - Look in the Releases section for the latest released version of Glasscord. Download the `glasscord.asar` file from there.
-- Locate your Electron app installation folder. We will assume it being the root directory from now on.
-- Locate the `resources` folder. Inside it you'll likely have an `app.asar` file OR an `app` folder.
+- Locate your Electron app installation folder.
+- Locate the `resources` folder. We will assume it being the working directory from now on. Inside it you'll likely have an `app.asar` file OR an `app` folder.
 
 #### Case 1: you have an `app.asar` file
 - Create an `app` folder.
@@ -53,11 +53,11 @@ Well, glad you asked!
 - Place your newly extracted `package.json` inside the `app` folder.
 
 #### Case 2: you already have an `app` folder
-- Make a duplicate copy of the `package.json` file and name it `package.original.json`.
+- Make a duplicate copy of the `package.json` file in the `app` directory and name it `package.original.json`.
 
 #### Finishing up
 - Place your `glasscord.asar` file inside the `app` folder.
-- Now, your target `package.json` should be extracted. Modify it so that its `main` property points to `./glasscord.asar`.
+- Modify the `package.json` file so that its `main` property points to `./glasscord.asar`.
   ```json
   {
     [...]
@@ -65,7 +65,7 @@ Well, glad you asked!
     [...]
   }
   ```
-- If everything was done correctly, the Electron app should start and Glasscord should be injected.
+- If everything was done correctly, you can start the Electron app and Glasscord should be injected.
 
 #### Notes for Discord
 
